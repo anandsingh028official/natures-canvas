@@ -73,7 +73,43 @@ transition:.3s;
 .card:hover{
 transform:translateY(-5px);
 }
+.menu-btn{
+  position:fixed;
+  top:15px;
+  left:15px;
+  font-size:30px;
+  cursor:pointer;
+  z-index:1001;
+  background:#222;
+  color:white;
+  padding:8px 12px;
+  border-radius:8px;
+}
 
+.sidebar{
+  position:fixed;
+  top:0;
+  left:-280px;
+  width:260px;
+  height:100%;
+  background:#111827;
+  transition:.3s;
+  z-index:1000;
+  padding-top:70px;
+}
+
+.sidebar a{
+  display:block;
+  color:white;
+  text-decoration:none;
+  padding:18px 25px;
+  font-size:18px;
+  border-bottom:1px solid #333;
+}
+
+.sidebar.open{
+  left:0;
+}
 </style>
 </head>
 
@@ -103,27 +139,24 @@ alt="Hero">
 
 
 
-<section class="categories">
 
-<div class="card" onclick="filterPosts('all')">🌍 All</div>
 
-<div class="card" onclick="filterPosts('nature')">🌿 Nature</div>
+<div class="menu-btn" onclick="toggleMenu()">☰</div>
 
-<div class="card" onclick="filterPosts('books')">📚 Books</div>
-
-<div class="card" onclick="filterPosts('philosophy')">💭 Philosophy</div>
-
-<div class="card" onclick="filterPosts('literature')">📖 Literature</div>
-
-<div class="card" onclick="filterPosts('writes')">✍️ My Writes</div>
-
-<div class="card" onclick="filterPosts('revolutionaries')">✊ Revolutionaries</div>
-
-<div class="card" onclick="filterPosts('reels')">🎥 Reels</div>
+<div id="sidebar" class="sidebar">
+  <a href="#" onclick="filterPosts('all');toggleMenu()">🌍 All</a>
+  <a href="#" onclick="filterPosts('nature');toggleMenu()">🌿 Nature</a>
+  <a href="#" onclick="filterPosts('books');toggleMenu()">📚 Books</a>
+  <a href="#" onclick="filterPosts('philosophy');toggleMenu()">💭 Philosophy</a>
+  <a href="#" onclick="filterPosts('literature');toggleMenu()">📖 Literature</a>
+  <a href="#" onclick="filterPosts('writes');toggleMenu()">✍️ My Writes</a>
+  <a href="#" onclick="filterPosts('revolutionaries');toggleMenu()">✊ Revolutionaries</a>
+  <a href="#" onclick="filterPosts('reels');toggleMenu()">🎥 Reels</a>
+</div>
 
 
 
-</section>
+
 <section style="padding:40px 20px;max-width:1200px;margin:auto;">
 
 <h2 style="text-align:center;margin-bottom:25px;">
@@ -207,6 +240,9 @@ function filterPosts(category){
       post.style.display = "none";
     }
   });
+} 
+  function toggleMenu(){
+  document.getElementById("sidebar").classList.toggle("open");
 }
 setInterval(()=>{
 
