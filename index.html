@@ -573,9 +573,9 @@ View Post👆
   <button onclick="sharePage()" class="share-btn">
   🔗 Share
 </button>
-
-                      
 </div>
+
+  
 </section>
 <script>
 
@@ -619,16 +619,21 @@ hero.addEventListener("touchend", (e) => {
   }
 });
 function filterPosts(category){
-  const posts = document.querySelectorAll(".post");
+  const cards = document.querySelectorAll(".post-card");
 
-  posts.forEach(post => {
-    if(category === "all" || post.classList.contains(category)){
-      post.style.display = "block";
+  cards.forEach(card => {
+    const post = card.querySelector(".post");
+
+    if (
+      category === "all" ||
+      (post && post.classList.contains(category))
+    ) {
+      card.style.display = "block";
     } else {
-      post.style.display = "none";
+      card.style.display = "none";
     }
   });
-} 
+}
   function toggleMenu(){
   document.getElementById("sidebar").classList.toggle("open");
 }
@@ -658,7 +663,7 @@ function searchPosts() {
   const cards = document.querySelectorAll(".post-card");
 
   cards.forEach(card => {
-    const text = card.innerText.toLowerCase();
+    const text = card.textContent.toLowerCase();
 
     if (text.includes(input)) {
       card.style.display = "";
