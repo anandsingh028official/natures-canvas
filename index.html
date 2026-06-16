@@ -365,6 +365,35 @@ const images=[
 ];
 
 let index=0;
+  let startX = 0;
+
+const hero = document.getElementById("hero");
+
+hero.addEventListener("touchstart", (e) => {
+  startX = e.touches[0].clientX;
+});
+
+hero.addEventListener("touchend", (e) => {
+  let endX = e.changedTouches[0].clientX;
+
+  // Left Swipe → Next Image
+  if (startX - endX > 50) {
+    index = (index + 1) % images.length;
+  }
+
+  // Right Swipe → Previous Image
+  else if (endX - startX > 50) {
+    index = (index - 1 + images.length) % images.length;
+  }
+
+  document.getElementById("hero").src = images[index];
+
+  const dots = document.querySelectorAll(".dot");
+  dots.forEach(dot => dot.classList.remove("active"));
+  if (dots[index]) {
+    dots[index].classList.add("active");
+  }
+});
 function filterPosts(category){
   const posts = document.querySelectorAll(".post");
 
