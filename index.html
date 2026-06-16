@@ -152,6 +152,19 @@ transform:translateY(-5px);
   width:100%;
   border-radius:14px;
 }
+  .dot{
+  display:inline-block;
+  width:10px;
+  height:10px;
+  margin:0 5px;
+  border-radius:50%;
+  background:#cbd5e1;
+}
+
+.dot.active{
+  background:#2563eb;
+  transform:scale(1.3);
+}
 </style>
 </head>
 
@@ -176,7 +189,15 @@ Original Ideas.
 id="hero"
 src="hero.png.png"
 alt="Hero">
+</div>
 
+<div id="slider-dots" style="text-align:center;margin:12px 0;">
+  <span class="dot active"></span>
+  <span class="dot"></span>
+  <span class="dot"></span>
+  <span class="dot"></span>
+  <span class="dot"></span>
+  <span class="dot"></span>
 </div>
 
 
@@ -363,7 +384,9 @@ setInterval(()=>{
 index=(index+1)%images.length;
 
 document.getElementById("hero").src=images[index];
-
+const dots = document.querySelectorAll(".dot");
+dots.forEach(dot => dot.classList.remove("active"));
+dots[index].classList.add("active");
 },4000);
 
 </script>
