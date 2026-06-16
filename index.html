@@ -169,6 +169,15 @@ transform:translateY(-5px);
   transform: scale(1.1);
   transition: 0.3s;
   }
+  .share-btn{
+  margin-top:8px;
+  padding:10px 16px;
+  border:none;
+  border-radius:10px;
+  background:#10b981;
+  color:#fff;
+  cursor:pointer;
+  }
 </style>
 </head>
 
@@ -245,6 +254,9 @@ gap:20px;">
    class="insta-btn">
   📸 View on Instagram
 </a>
+  <button onclick="sharePage()" class="share-btn">
+  🔗 Share
+  </button>
 <a class="post books" href="https://www.instagram.com/p/DZM9x0XmhyJ/" target="_blank">
   <img src="B.png" style="width:100%;border-radius:16px;">
 </a>
@@ -255,6 +267,9 @@ gap:20px;">
    class="insta-btn">
   📸 View on Instagram
 </a>
+  <button onclick="sharePage()" class="share-btn">
+  🔗 Share
+</button>
 <a class="post philosophy" href="https://www.instagram.com/p/DZEKwe-n33S/" target="_blank">
   <img src="C.jpg" style="width:100%;border-radius:16px;">
 </a>
@@ -265,6 +280,9 @@ gap:20px;">
    class="insta-btn">
   📸 View on Instagram
 </a>
+  <button onclick="sharePage()" class="share-btn">
+  🔗 Share
+</button>
 <a class="post books" href="https://www.instagram.com/p/DZM9x0XmhyJ/" target="_blank">
   <img src="D.png" style="width:100%;border-radius:16px;">
 </a>
@@ -275,6 +293,9 @@ gap:20px;">
    class="insta-btn">
   📸 View on Instagram
 </a>
+  <button onclick="sharePage()" class="share-btn">
+  🔗 Share
+</button>
 <a class="post literature" href="https://www.instagram.com/p/DZv8O5EDUSB/" target="_blank">
   <img src="E.jpg" style="width:100%;border-radius:16px;">
 </a>
@@ -285,6 +306,9 @@ gap:20px;">
    class="insta-btn">
   📸 View on Instagram
 </a>
+  <button onclick="sharePage()" class="share-btn">
+  🔗 Share
+</button>
 <a class="post writes" href="https://www.instagram.com/p/DYzdEFCmr9a/" target="_blank">
   <img src="F.png" style="width:100%;border-radius:16px;">
 </a>
@@ -295,6 +319,9 @@ gap:20px;">
    class="insta-btn">
   📸 View on Instagram
 </a>
+  <button onclick="sharePage()" class="share-btn">
+  🔗 Share
+</button>
 <a class="post nature" href="https://www.instagram.com/p/DYPooxqnxug/" target="_blank">
   <img src="G.jpg" style="width:100%;border-radius:16px;">
 </a>
@@ -305,6 +332,9 @@ gap:20px;">
    class="insta-btn">
   📸 View on Instagram
 </a>
+  <button onclick="sharePage()" class="share-btn">
+  🔗 Share
+</button>
 <a class="post nature" href="https://www.instagram.com/p/DYOmOh4n7Tx/" target="_blank">
   <img src="H.jpg" style="width:100%;border-radius:16px;">
 </a>
@@ -315,6 +345,9 @@ gap:20px;">
    class="insta-btn">
   📸 View on Instagram
 </a>
+  <button onclick="sharePage()" class="share-btn">
+  🔗 Share
+</button>
 <a class="post nature" href="https://www.instagram.com/p/DWPKRRDj-KQ/" target="_blank">
   <img src="I.png" style="width:100%;border-radius:16px;">
 </a>
@@ -325,6 +358,9 @@ gap:20px;">
    class="insta-btn">
   📸 View on Instagram
 </a>
+  <button onclick="sharePage()" class="share-btn">
+  🔗 Share
+</button>
 <a class="post books revolutionaries" href="https://www.instagram.com/p/DGBIMnxTVhx/" target="_blank">
   <img src="J.jpg" style="width:100%;border-radius:16px;">
 </a>
@@ -335,6 +371,9 @@ gap:20px;">
    class="insta-btn">
   📸 View on Instagram
 </a>
+  <button onclick="sharePage()" class="share-btn">
+  🔗 Share
+  </button>
 <a class="post revolutionaries" href="https://www.instagram.com/p/DGBHRVQzWPY/" target="_blank">
   <img src="K.jpg" style="width:100%;border-radius:16px;">
 </a>
@@ -345,6 +384,9 @@ gap:20px;">
    class="insta-btn">
   📸 View on Instagram
 </a>
+  <button onclick="sharePage()" class="share-btn">
+  🔗 Share
+</button>
 <a class="post reels" href="https://www.instagram.com/reel/DZjA8BKSbFK/?igsh=ZTJrYWZvdmY5emps" target="_blank">
   <img src="R1.png" style="width:100%;border-radius:16px;">
 </a>
@@ -355,6 +397,9 @@ gap:20px;">
    class="insta-btn">
   🎥 Watch on Instagram
 </a>
+  <button onclick="sharePage()" class="share-btn">
+  🔗 Share
+</button>
 </div>
 </section>
 <script>
@@ -421,7 +466,17 @@ const dots = document.querySelectorAll(".dot");
 dots.forEach(dot => dot.classList.remove("active"));
 dots[index].classList.add("active");
 },4000);
-
+function sharePage() {
+  if (navigator.share) {
+    navigator.share({
+      title: document.title,
+      url: window.location.href
+    });
+  } else {
+    navigator.clipboard.writeText(window.location.href);
+    alert("Link copied!");
+  }
+}
 </script>
   <section style="padding:50px 20px;text-align:center;max-width:800px;margin:auto;">
   <h2>🌿 About Nature's Canvas</h2>
