@@ -185,6 +185,28 @@ transform:translateY(-5px);
   transform: translateY(-5px);
   box-shadow: 0 12px 28px rgba(0,0,0,0.25);
 }
+  .chips{
+  display:flex;
+  gap:8px;
+  overflow-x:auto;
+  padding:10px 0;
+  margin-bottom:20px;
+  scrollbar-width:none;
+}
+
+.chips::-webkit-scrollbar{
+  display:none;
+}
+
+.chips button{
+  border:none;
+  background:#374151;
+  color:white;
+  padding:8px 14px;
+  border-radius:999px;
+  cursor:pointer;
+  white-space:nowrap;
+}
 </style>
 </head>
 
@@ -252,7 +274,16 @@ alt="Hero">
       onkeyup="searchPosts()"
       style="width:100%;padding:12px;border-radius:10px;border:1px solid #ccc;font-size:16px;">
   </div>
-
+<div class="chips">
+  <button onclick="filterPosts('all')">🌍 All</button>
+  <button onclick="filterPosts('nature')">🌿 Nature</button>
+  <button onclick="filterPosts('books')">📚 Books</button>
+  <button onclick="filterPosts('philosophy')">💭 Philosophy</button>
+  <button onclick="filterPosts('literature')">📖 Literature</button>
+  <button onclick="filterPosts('writes')">✍️ My Writes</button>
+  <button onclick="filterPosts('revolutionaries')">✊ Revolutionaries</button>
+  <button onclick="filterPosts('reels')">🎥 Reels</button>
+</div>
   <h2 style="text-align:center;margin-bottom:25px;">
     ✨ Featured Posts ✨
   </h2>
