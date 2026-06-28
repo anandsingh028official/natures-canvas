@@ -316,8 +316,8 @@ gap:20px;">
   🔗 Share
   </button>
  <button class="like-btn" onclick="toggleLike(this)">
-❤️ Like
- </button>
+  🤍 <span class="count">0</span>
+</button>
   </div>
     <div class="post-card">
 <a class="post nature" href="https://www.instagram.com/p/DZM9x0XmhyJ/" target="_blank">
@@ -349,6 +349,9 @@ that only the wind remembers.✍🏻
   <button onclick="sharePage()" class="share-btn">
   🔗 Share
 </button>
+      <button class="like-btn" onclick="toggleLike(this)">
+  🤍 <span class="count">0</span>
+</button>
 </div>
       <div class="post-card">
 <a class="post nature" href="https://www.instagram.com/p/DZEKwe-n33S/" target="_blank">
@@ -370,6 +373,9 @@ Perhaps that is the lesson hidden within every bloom to grow gently, remain true
   <button onclick="sharePage()" class="share-btn">
   🔗 Share
 </button>
+        <button class="like-btn" onclick="toggleLike(this)">
+  🤍 <span class="count">0</span>
+</button>
 </div>
         <div class="post-card">
 <a class="post nature" href="https://www.instagram.com/p/DZM9x0XmhyJ/" target="_blank">
@@ -389,6 +395,9 @@ Perhaps that is the lesson hidden within every bloom to grow gently, remain true
   <button onclick="sharePage()" class="share-btn">
   🔗 Share
 </button>
+          <button class="like-btn" onclick="toggleLike(this)">
+  🤍 <span class="count">0</span>
+</button>
 </div>
           <div class="post-card">
 <a class="post My writes" href="https://www.instagram.com/p/DZv8O5EDUSB/" target="_blank">
@@ -407,6 +416,9 @@ Perhaps that is the lesson hidden within every bloom to grow gently, remain true
 </a>
   <button onclick="sharePage()" class="share-btn">
   🔗 Share
+</button>
+            <button class="like-btn" onclick="toggleLike(this)">
+  🤍 <span class="count">0</span>
 </button>
 </div>
             <div class="post-card">
@@ -436,6 +448,9 @@ even when the sun is the same. ✨🌿
   <button onclick="sharePage()" class="share-btn">
   🔗 Share
 </button>
+              <button class="like-btn" onclick="toggleLike(this)">
+  🤍 <span class="count">0</span>
+</button>
 </div>
               <div class="post-card">
 <a class="post nature" href="https://www.instagram.com/p/DYPooxqnxug/" target="_blank">
@@ -458,6 +473,9 @@ View Post👆
 </a>
   <button onclick="sharePage()" class="share-btn">
   🔗 Share
+</button>
+                <button class="like-btn" onclick="toggleLike(this)">
+  🤍 <span class="count">0</span>
 </button>
 </div>
                 <div class="post-card">
@@ -483,6 +501,9 @@ View Post👆
 </a>
   <button onclick="sharePage()" class="share-btn">
   🔗 Share
+</button>
+                  <button class="like-btn" onclick="toggleLike(this)">
+  🤍 <span class="count">0</span>
 </button>
 </div>
                   <div class="post-card">
@@ -524,6 +545,9 @@ View Post👆
   <button onclick="sharePage()" class="share-btn">
   🔗 Share
 </button>
+                    <button class="like-btn" onclick="toggleLike(this)">
+  🤍 <span class="count">0</span>
+</button>
 </div>
                     <div class="post-card">
 <a class="nature" href="https://www.instagram.com/p/DGBIMnxTVhx/" target="_blank">
@@ -557,6 +581,9 @@ View Post👆
   <button onclick="sharePage()" class="share-btn">
   🔗 Share
   </button>
+                      <button class="like-btn" onclick="toggleLike(this)">
+  🤍 <span class="count">0</span>
+</button>
 </div>
                       <div class="post-card">
 <a class="post nature" href="https://www.instagram.com/p/DGBHRVQzWPY/" target="_blank">
@@ -585,6 +612,9 @@ View Post👆
   <button onclick="sharePage()" class="share-btn">
   🔗 Share
 </button>
+                        <button class="like-btn" onclick="toggleLike(this)">
+  🤍 <span class="count">0</span>
+</button>
 </div>
                         <div class="post-card">
 <a class="post reels" href="https://www.instagram.com/reel/DZjA8BKSbFK/?igsh=ZTJrYWZvdmY5emps" target="_blank">
@@ -606,6 +636,9 @@ View Post👆
 </a>
   <button onclick="sharePage()" class="share-btn">
   🔗 Share
+</button>
+                          <button class="like-btn" onclick="toggleLike(this)">
+  🤍 <span class="count">0</span>
 </button>
 </div>
 
@@ -705,6 +738,18 @@ function searchPosts() {
       card.style.display = "none";
     }
   });
+}
+
+  function toggleLike(btn){
+  const count = btn.querySelector(".count");
+
+  if(btn.classList.contains("liked")){
+    btn.classList.remove("liked");
+    btn.innerHTML = '🤍 <span class="count">0</span>';
+  }else{
+    btn.classList.add("liked");
+    btn.innerHTML = '❤️ <span class="count">1</span>';
+  }
 }
   
 </script>
